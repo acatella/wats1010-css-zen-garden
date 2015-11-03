@@ -3,12 +3,16 @@
 /*
 
 TO-DO:
-	change margins/spacing to vh on opening page
+	colors:
+		blue: #469AE9;
+		red: #FF4D4D
+		grey: #959595;
 	style abbr and a links including psuedo classes
 	think of some content to add w/ ::after or ::before
 	use :hover class to animate download options?
 	find breakpoints and design 2 more style for tablet/mobile
-	all the fixed positioning creates problem when screen isn't full height...
+	how can i use %'s and min-height to make variable height page?
+	add down arrows between scrollable content?
 */
 
 /*********************
@@ -23,14 +27,16 @@ GENERAL
 	background: #fff;
 }
 
+html {
+	min-height: 676px;
+}
 body {
 	font: 85% georgia, sans-serif;
 	line-height: 1.2;
 	background: #fff;
 	max-width: 1280px;
 	font-family: "Titillium Web", sans-serif;
-	min-height: 675px;
-
+	min-height: 640px;
 }
 
 a {
@@ -52,9 +58,12 @@ body h1,h2,h3,h4,h5,h6 {
 	font-family: "Amaranth", sans-serif;
 	text-transform: uppercase;
 }
+
 h3 {
 	font-size: 200%;
 	margin-bottom: 10px;
+	display: inline-block;
+	border-bottom: 2px dashed #469AE9;
 }
 
 ul {
@@ -65,6 +74,7 @@ ul {
 
 p {
 	margin-bottom: 10px;
+
 }
 /*********************
 LEFT FIXED AREA
@@ -72,40 +82,50 @@ LEFT FIXED AREA
 
 header {
 	position: fixed;
-	top: 2vh;
-	left:2vh;
+	top: 15px;
+	left: 1%;
 	width: 36%;
+	margin-right: 1%;
 }
 
 header h1 {
 	font-size: 300%;
+	border-bottom: 3px solid #FF4D4D;
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+header h2 {
+	color: #469AE9;
 }
 
 .summary {
 	position: fixed;
-	top: 15vh;
-	left: 2vh;
+	top: 100px;
+	left: 1%;
 	width: 20%;
 	font-size: 85%;
+	color: #959595;
+	padding-right: 16%;
 }
 
 .summary p:nth-child(2) {
 	position: fixed;
-	bottom: 50px;
+	top: 595px;
 }
 
 .explanation {
 	position: fixed;
-	top: 35vh;
-	left: 2vh;
+	top: 240px;
+	left: 1%;
 	width: 36%;
 }
 
 footer {
 	position: fixed;
-	bottom: 30px;
-	left: 2vh;
-	width: 40%;
+	top: 615px;
+	left: 1%;
+	width: 36%;
 }
 
 /*********************
@@ -113,13 +133,16 @@ SCROLLABLE CONTENT
 *********************/
 
 .page-wrapper {
-	padding-right: 2vh;
+	padding-right: 15px;
+	border-left: 3px solid #FF4D4D;
+	padding-left: 1%;
+
 }
 
 .preamble {
 	position: relative;
-	padding-top: 35vh;
-	padding-bottom: 55vh;
+	padding-top: 240px;
+	padding-bottom: 375px;
 	z-index: 100;
 }
 
@@ -128,23 +151,26 @@ SCROLLABLE CONTENT
 
 }
 .participation {
-	margin-top: 155vh;
+	margin-top: 800px;
 }
 
 .participation {
-	margin-bottom: 60vh;
+	margin-bottom: 380px;
 }
 
 .benefits {
-	margin-bottom: 50vh;
+	margin-bottom: 300px;
 }
+
 .requirements {
 	position: relative;
-	margin-bottom: 12vh;
-	padding-top: 10vh;
+	padding-bottom: 81px;
+	padding-top: 87px;
 	width: 100%;
 	z-index: 10;
 }
+
+
 /*********************
 FIXED SIDEBAR
 *********************/
@@ -156,7 +182,7 @@ FIXED SIDEBAR
 }
 
 .design-selection {
-	top: 25vh;
+	top: 173px;
 }
 
 .design-selection .designer-name {
@@ -173,7 +199,7 @@ FIXED SIDEBAR
 
 .design-archives {
 	text-align: center;
-	top: 60vh;
+	top: 403px;
 }
 
 .archives {
@@ -187,15 +213,30 @@ FIXED SIDEBAR
 }
 
 /*********************
-FOOTER
+RESOURCES (footer)
 *********************/
 
-
-
-footer {
-	width: 50%;
+.resources {
+	display: inline-block;
+	margin: 0;
+	float: left;
+	width: 20%;
+	font-size: 120%;
+	border: none;
 }
 
-footer a {
+.zen-resources ul {
+	float: right;
+	width: 79%;
+	padding: auto;
+}
 
+.zen-resources ul li {
+	display: inline-block;
+	text-align: center;
+	margin-right: 15px;
+}
+
+aside {
+	margin-bottom: 60px;
 }
