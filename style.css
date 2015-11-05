@@ -6,13 +6,17 @@ TO-DO:
 	colors:
 		blue: #469AE9;
 		red: #FF4D4D
+			opaque version: rgba(255, 74, 62, .6)
 		grey: #959595;
+		green: #53BF6B
+	make body position relative to wrap fixed items inside it
 	style abbr and a links including psuedo classes
 	think of some content to add w/ ::after or ::before
+		-add images of arrows beneath scrollable content
 	use :hover class to animate download options?
-	find breakpoints and design 2 more style for tablet/mobile
-	how can i use %'s and min-height to make variable height page?
-	add down arrows between scrollable content?
+	add a feature that uses :focus
+	do abbr not recognize rgba values?
+	why doesn't the aside bg img work?
 */
 
 /*********************
@@ -24,19 +28,20 @@ GENERAL
 	Box-sizing: border-box
 	Padding: 0;
 	Margin: 0;
-	background: #fff;
 }
 
 html {
-	min-height: 676px;
+	width: 100%;
+	background: url("img/swirl_pattern.png") fixed;
 }
+
+
 body {
 	font: 85% georgia, sans-serif;
 	line-height: 1.2;
-	background: #fff;
-	max-width: 1280px;
 	font-family: "Titillium Web", sans-serif;
-	min-height: 640px;
+	margin: 0 auto;
+	width: 100%;
 }
 
 a {
@@ -63,7 +68,7 @@ h3 {
 	font-size: 200%;
 	margin-bottom: 10px;
 	display: inline-block;
-	border-bottom: 2px dashed #469AE9;
+	border-bottom: 2px dashed rgba(255, 74, 62, .6);
 }
 
 ul {
@@ -76,12 +81,32 @@ p {
 	margin-bottom: 10px;
 
 }
+
+a{
+	/*display: inline-block;*/
+	background: none;
+	color: #000;
+	-webkit-transition: background .8s;
+	transition: background .8s;
+	-webkit-transition: color .8s;
+	transition: color .8s;
+}
+
+a:hover {
+	background: rgba(255, 74, 62, .6);
+	color: #fff;
+}
+
+abbr {
+	color: inherit;
+	background: inherit;
+}
 /*********************
 LEFT FIXED AREA
 *********************/
 
 header {
-	position: fixed;
+	position: fixed	;
 	top: 15px;
 	left: 1%;
 	width: 36%;
@@ -90,13 +115,14 @@ header {
 
 header h1 {
 	font-size: 300%;
-	border-bottom: 3px solid #FF4D4D;
+	border-bottom: 3px solid #000;
 	display: inline-block;
 	margin-bottom: 5px;
+	color: rgba(255, 74, 62, .6);
 }
 
 header h2 {
-	color: #469AE9;
+	color: #000;
 }
 
 .summary {
@@ -133,28 +159,28 @@ SCROLLABLE CONTENT
 *********************/
 
 .page-wrapper {
-	padding-right: 15px;
-	border-left: 3px solid #FF4D4D;
-	padding-left: 1%;
-
+	border-left: 3px solid #000;
+	background: url("img/noise_pattern_with_crosslines.png") fixed;
+	/*alter this color to a better gray*/
 }
 
 .preamble {
 	position: relative;
 	padding-top: 240px;
 	padding-bottom: 375px;
+	padding-left: 2%;
+	padding-right: 1%;
 	z-index: 100;
+	background: #fff;
+	background: url("img/subtle_stripes.png");
 }
 
-.participation, .benefits, .requirements {
-	width: 50%;
-
+.participation, .benefits {
+	width: 47%;
+	padding-left: 2%;
 }
 .participation {
 	margin-top: 800px;
-}
-
-.participation {
 	margin-bottom: 380px;
 }
 
@@ -164,10 +190,13 @@ SCROLLABLE CONTENT
 
 .requirements {
 	position: relative;
-	padding-bottom: 81px;
-	padding-top: 87px;
-	width: 100%;
+	/*padding-bottom: 81px;*/
+	padding-top: 30vh;
+	height: 70vh;
 	z-index: 10;
+	background: url("img/subtle_stripes.png");
+	padding-left: 2%;
+	padding-right: 1%;
 }
 
 
@@ -192,6 +221,7 @@ FIXED SIDEBAR
 .design-selection li {
 	margin-bottom: 5px;
 }
+
 .select {
 	text-align: center;
 	margin-bottom: 15px;
@@ -202,16 +232,30 @@ FIXED SIDEBAR
 	top: 403px;
 }
 
+.design-archives li {
+	display: inline-block;
+}
 .archives {
 	display: none;
 }
 
-.next, .viewall {
+.next a, .viewall a {
 	display: inline-block;
 	padding: 8px 15px;
 	border: 1px solid #000;
+	background: #fff;
+	-webkit-transition: background 2s;
+	transition: background .8s;
 }
 
+.design-archives a:hover {
+	background: #E5E5E5;
+	color: #000;
+}
+
+.indicator {
+	background: inherit;
+}
 /*********************
 RESOURCES (footer)
 *********************/
@@ -220,23 +264,21 @@ RESOURCES (footer)
 	display: inline-block;
 	margin: 0;
 	float: left;
-	width: 20%;
 	font-size: 120%;
-	border: none;
+	margin-left: 2%;
 }
 
 .zen-resources ul {
 	float: right;
 	width: 79%;
-	padding: auto;
 }
 
 .zen-resources ul li {
 	display: inline-block;
-	text-align: center;
-	margin-right: 15px;
+	margin-right: 1%;
 }
 
 aside {
 	margin-bottom: 60px;
+	background: url("img/subtle_stripes.png");
 }
