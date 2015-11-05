@@ -9,14 +9,14 @@ TO-DO:
 			opaque version: rgba(255, 74, 62, .6)
 		grey: #959595;
 		green: #53BF6B
-	make body position relative to wrap fixed items inside it
-	style abbr and a links including psuedo classes
+		green (rgn): rgb(83, 191, 107)
 	think of some content to add w/ ::after or ::before
 		-add images of arrows beneath scrollable content
-	use :hover class to animate download options?
+	find a bg image for pre amble and requirements sections
+		-use animate to add a slow zoom to bg when mouse is over either section
 	add a feature that uses :focus
-	do abbr not recognize rgba values?
-	why doesn't the aside bg img work?
+		-have the select a design section pop-in and back out when comes into focus?
+
 */
 
 /*********************
@@ -31,7 +31,7 @@ GENERAL
 }
 
 html {
-	width: 100%;
+	min-width: 1200px;
 	background: url("img/swirl_pattern.png") fixed;
 }
 
@@ -68,7 +68,7 @@ h3 {
 	font-size: 200%;
 	margin-bottom: 10px;
 	display: inline-block;
-	border-bottom: 2px dashed rgba(255, 74, 62, .6);
+	border-bottom: 2px dashed #53BF6B;
 }
 
 ul {
@@ -82,10 +82,8 @@ p {
 
 }
 
-a{
-	/*display: inline-block;*/
+a {
 	background: none;
-	color: #000;
 	-webkit-transition: background .8s;
 	transition: background .8s;
 	-webkit-transition: color .8s;
@@ -93,13 +91,13 @@ a{
 }
 
 a:hover {
-	background: rgba(255, 74, 62, .6);
-	color: #fff;
+	background: rgba(83, 191, 107,.3);
+	color: rgb(83, 191, 107);
 }
 
 abbr {
 	color: inherit;
-	background: inherit;
+	background: transparent;
 }
 /*********************
 LEFT FIXED AREA
@@ -118,7 +116,7 @@ header h1 {
 	border-bottom: 3px solid #000;
 	display: inline-block;
 	margin-bottom: 5px;
-	color: rgba(255, 74, 62, .6);
+	color: #53BF6B;
 }
 
 header h2 {
@@ -132,14 +130,24 @@ header h2 {
 	width: 20%;
 	font-size: 85%;
 	color: #959595;
-	padding-right: 16%;
 }
 
+.summary p:nth-child(1) {
+	background: rgb(83, 191, 107);
+	color: #fff;
+	padding-left: 5px;
+}
 .summary p:nth-child(2) {
 	position: fixed;
 	top: 595px;
+	background: rgb(83, 191, 107);
+	color: #fff;
+	padding-left: 5px;
 }
 
+.summary p:nth-child(2) a:hover {
+	color: #fff;
+}
 .explanation {
 	position: fixed;
 	top: 240px;
@@ -161,13 +169,13 @@ SCROLLABLE CONTENT
 .page-wrapper {
 	border-left: 3px solid #000;
 	background: url("img/noise_pattern_with_crosslines.png") fixed;
-	/*alter this color to a better gray*/
 }
 
 .preamble {
 	position: relative;
 	padding-top: 240px;
-	padding-bottom: 375px;
+	/*padding-bottom: 375px;*/
+	height: 90vh;
 	padding-left: 2%;
 	padding-right: 1%;
 	z-index: 100;
@@ -249,7 +257,7 @@ FIXED SIDEBAR
 }
 
 .design-archives a:hover {
-	background: #E5E5E5;
+	background: rgba(83, 191, 107,.3);
 	color: #000;
 }
 
@@ -260,6 +268,10 @@ FIXED SIDEBAR
 RESOURCES (footer)
 *********************/
 
+.zen-resources {
+	padding-bottom: 60px;
+	background: url("img/subtle_stripes.png");
+}
 .resources {
 	display: inline-block;
 	margin: 0;
@@ -276,9 +288,4 @@ RESOURCES (footer)
 .zen-resources ul li {
 	display: inline-block;
 	margin-right: 1%;
-}
-
-aside {
-	margin-bottom: 60px;
-	background: url("img/subtle_stripes.png");
 }
