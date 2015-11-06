@@ -10,9 +10,6 @@ TO-DO:
 		grey: #959595;
 		green: #53BF6B
 		green (rgn): rgb(83, 191, 107)
-	think of some content to add w/ ::after or ::before
-		-add images of arrows beneath scrollable content
-	find a bg image for pre amble and requirements sections
 		-use animate to add a slow zoom to bg when mouse is over either section
 	add a feature that uses :focus
 		-have the select a design section pop-in and back out when comes into focus?
@@ -90,7 +87,7 @@ a {
 	transition: color .8s;
 }
 
-a:hover {
+a:hover, .requirements a:hover, .zen-resources a:hover{
 	background: rgba(83, 191, 107,.3);
 	color: rgb(83, 191, 107);
 }
@@ -180,7 +177,7 @@ SCROLLABLE CONTENT
 	padding-right: 1%;
 	z-index: 100;
 	background: #fff;
-	background: url("img/subtle_stripes.png");
+	background: url("img/pool_table.png");
 }
 
 .participation, .benefits {
@@ -198,16 +195,17 @@ SCROLLABLE CONTENT
 
 .requirements {
 	position: relative;
-	/*padding-bottom: 81px;*/
 	padding-top: 30vh;
 	height: 70vh;
 	z-index: 10;
-	background: url("img/subtle_stripes.png");
+	background: url("img/pool_table.png");
 	padding-left: 2%;
 	padding-right: 1%;
 }
 
-
+.preamble h3, .requirements h3, .requirements, .preamble, .preamble a, .requirements a {
+	color: #DEDEDE;
+}
 /*********************
 FIXED SIDEBAR
 *********************/
@@ -257,12 +255,12 @@ FIXED SIDEBAR
 }
 
 .design-archives a:hover {
-	background: rgba(83, 191, 107,.3);
+	background: rgba(83, 191, 107,.6);
 	color: #000;
 }
 
 .indicator {
-	background: inherit;
+	background: transparent;
 }
 /*********************
 RESOURCES (footer)
@@ -270,7 +268,7 @@ RESOURCES (footer)
 
 .zen-resources {
 	padding-bottom: 60px;
-	background: url("img/subtle_stripes.png");
+	background: url("img/pool_table.png");
 }
 .resources {
 	display: inline-block;
@@ -278,6 +276,7 @@ RESOURCES (footer)
 	float: left;
 	font-size: 120%;
 	margin-left: 2%;
+	color: #DEDEDE;
 }
 
 .zen-resources ul {
@@ -288,4 +287,8 @@ RESOURCES (footer)
 .zen-resources ul li {
 	display: inline-block;
 	margin-right: 1%;
+}
+
+.zen-resources li a {
+	color: #DEDEDE;
 }
