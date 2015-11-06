@@ -179,13 +179,6 @@ SCROLLABLE CONTENT
 	background: url("img/pool_table.png");
 }
 
-/*.preamble::after {
-	content: url("img/arrow.png");
-	margin-left: 41%;
-	margin-top: 50px;
-	display: inline-block;
-}*/
-
 .preamble::after {
 	display: inline-block;
 	width: 50px;
@@ -196,6 +189,7 @@ SCROLLABLE CONTENT
 	margin-left: 46%;
 	margin-top: 50px;
 }
+
 
 .participation, .benefits {
 	width: 47%;
