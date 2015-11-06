@@ -87,7 +87,7 @@ a {
 	transition: color .8s;
 }
 
-a:hover, .requirements a:hover, .zen-resources a:hover{
+a:hover, .requirements a:hover, .zen-resources a:hover {
 	background: rgba(83, 191, 107,.3);
 	color: rgb(83, 191, 107);
 }
@@ -171,13 +171,30 @@ SCROLLABLE CONTENT
 .preamble {
 	position: relative;
 	padding-top: 240px;
-	/*padding-bottom: 375px;*/
 	height: 90vh;
 	padding-left: 2%;
 	padding-right: 1%;
 	z-index: 100;
 	background: #fff;
 	background: url("img/pool_table.png");
+}
+
+/*.preamble::after {
+	content: url("img/arrow.png");
+	margin-left: 41%;
+	margin-top: 50px;
+	display: inline-block;
+}*/
+
+.preamble::after {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	content: "";
+	background: url("img/arrow.png");
+	background-size: 100%;
+	margin-left: 46%;
+	margin-top: 50px;
 }
 
 .participation, .benefits {
